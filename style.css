@@ -59,14 +59,15 @@ body {
 }
 
 .home {
-    height: 100vh;
-    background: url('Nodir.jpg') no-repeat;
-    background-color: #081b29;
-    background-position: top right -100px;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
-
+    height: 100vh; /* Ensures the section takes the full height of the viewport */
+    background: url('Nodir.jpg') no-repeat center center fixed; /* Center the image and fix it in place */
+    background-color: #081b29; /* Fallback color for the background */
+    background-size: cover; /* Ensures the background image covers the whole section */
+    display: flex; /* Enables flexbox for centering content */
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Horizontally centers content */
+    padding: 0 10%; /* Adds padding on the sides */
+    color: white; /* Ensures text color is readable on dark background */
 }
 
 .home-content {
