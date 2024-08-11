@@ -59,7 +59,8 @@ body {
 }
 
 .home {
-    height: 100vh;
+    max-width: 100%; 
+    height: auto;
     background: url('Nodir.jpg') no-repeat;
     background-color: #081b29;
     background-position: top right -100px;
