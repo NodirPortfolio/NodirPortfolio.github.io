@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2? family=Poppins:wght@300;400;500;600;700;800;900 & display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    background-color: #001f3f; /* Dark blue background */
+    color: #fff; /* Light text color for contrast */
+    font-family: Arial, sans-serif; /* Font family */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    text-align: center;
+}
+
+/* Header styling */
+.header {
+    position: fixed; /* Fixes the header at the top-left corner */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the viewport */
+    padding: 10px 20px; /* Padding around the header */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex; /* Flexbox for alignment */
+    justify-content: space-between; /* Space out logo and navbar */
+    align-items: center; /* Vertically center items */
+    z-index: 1000; /* Ensure it's on top of other content */
+}
+
+/* Logo styling */
+.header .logo {
+    font-size: 24px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: 35px; /* Space between logo and navbar */
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex; /* Flexbox for horizontal layout */
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 35px; /* Space between links */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #00abf0; /* Highlight color for hover and active states */
+}
+
+/* Snow styling */
+#snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Make sure snowflakes don't interfere with other elements */
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+    z-index: 0; /* Ensure snow is behind other content */
+}
+
+.snowflake {
+    position: absolute;
+    background: radial-gradient(circle, #fff, #e0e0e0);
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none; /* Prevent interaction with snowflakes */
+    z-index: 0;
+    animation: fall linear infinite; /* Apply fall animation */
+}
+
+/* Animation for snowflakes falling */
+@keyframes fall {
+    from {
+        transform: translateY(-100px); /* Start above the viewport */
+    }
+    to {
+        transform: translateY(100vh); /* End at the bottom of the viewport */
+    }
+}
+
+/* Title Container styling */
+.title-container {
+    position: absolute; /* Position the title relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset by half the width and height */
+    text-align: center; /* Center text alignment */
+    z-index: 1; /* Ensure the title is above other content */
+}
+
+.title-container h1 {
+    font-size: 36px; /* Adjust font size as needed */
+    color: #fff; /* White color for contrast */
+    margin: 0; /* Remove default margin */
+}
+
+/* Gallery styling */
+.gallery {
+    display: flex; /* Flexbox for image layout */
+    flex-wrap: wrap; /* Wrap images to new lines */
+    justify-content: center; /* Center images horizontally */
+    padding: 20px; /* Padding around the gallery */
+    position: relative; /* Ensure stacking context */
+    z-index: 1; /* Ensure the gallery is on top of snowflakes */
+}
+
+.gallery img {
+    margin: 10px;
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
